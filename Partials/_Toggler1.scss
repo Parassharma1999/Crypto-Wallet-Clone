@@ -1,0 +1,51 @@
+input[type=checkbox]{
+	height: 0;
+	width: 0;
+	visibility: hidden;
+}
+
+.buttonLabel {
+	top:-0.7rem;
+	cursor: pointer;
+	text-indent: -9999px;
+	width: 35px;
+	height: 20px;
+
+	background: #EAEAEA; 
+	display: block;
+	border-radius: 100px;
+	position: relative;
+}
+
+.buttonLabel:after {
+	content: '';
+	position: absolute;
+	top: 2.5px;
+	left: 3px;
+	width: 15px;
+	height: 15px;
+	background: #fff;
+	border-radius: 90px;
+	transition: 0.3s;
+}
+
+input:checked + .buttonLabel {
+	background: rgba(248, 196, 0, 1);
+}
+
+input:checked + .buttonLabel:after {
+	left: calc(100% - 2.5px);
+	transform: translateX(-100%);
+}
+
+// .buttonLabel:active:after {
+// 	width: 90px;
+// }
+
+// centering
+// body {
+// 	display: flex;
+// 	justify-content: center;
+// 	align-items: center;
+// 	height: 100vh;
+// }
